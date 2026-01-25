@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>UnSpeed Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+</script>
+
+<body>
+
+    <div class="container">
+        <img src="./icono-png.png" alt="Logo" class="logo">
+        <h1>Redes sociales</h1>
+
+        <a class="link-btn" href="https://instagram.com/unspeed.es" target="_blank">Instagram</a>
+        <a class="link-btn" href="https://tiktok.com/@unspeed.es" target="_blank">TikTok</a>
+        <a href="https://wa.me/34634616603" class="link-btn" target="_blank" aria-label="WhatsApp">WhatsApp (+34 634 616 603)</a>
+    </div>
+
+</body>
+<div class="bubbles">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+</div>
+</html>
+
+<script>
+setInterval(() => {
+    if (window.outerWidth - window.innerWidth > 160 ||
+        window.outerHeight - window.innerHeight > 160) {
+        document.body.innerHTML = `
+            <h1 style="color:#00ccff;text-align:center;margin-top:40vh;">
+                🔒 Inspección detectada
+            </h1>`;
+    }
+}, 1000);
+</script>
