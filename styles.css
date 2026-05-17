@@ -1,3 +1,4 @@
+/*
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
 
 * {
@@ -6,7 +7,6 @@
     padding: 0;
 }
 
-/* FONDO PRINCIPAL */
 body {
     min-height: 100vh;
     font-family: 'Orbitron', sans-serif;
@@ -18,7 +18,7 @@ body {
     align-items: center;
 }
 
-/* BURBUJAS */
+
 .bubbles {
     position: fixed;
     width: 100%;
@@ -38,7 +38,7 @@ body {
     animation: rise 20s linear infinite;
 }
 
-/* Tamaños y posiciones */
+
 .bubbles span:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 18s; }
 .bubbles span:nth-child(2) { width: 20px; height: 20px; left: 20%; animation-duration: 12s; animation-delay: 2s; }
 .bubbles span:nth-child(3) { width: 60px; height: 60px; left: 30%; animation-duration: 25s; }
@@ -64,7 +64,7 @@ body {
     }
 }
 
-/* TARJETA CENTRAL */
+
 .container {
     position: relative;
     z-index: 1;
@@ -90,7 +90,7 @@ body {
     }
 }
 
-/* LOGO */
+
 .logo {
     width: 130px;
     margin-bottom: 25px;
@@ -103,7 +103,6 @@ body {
     filter: drop-shadow(0 0 30px #00ccff);
 }
 
-/* TÍTULO */
 h1 {
     color: #00ccff;
     margin-bottom: 20px;
@@ -115,7 +114,7 @@ h1 {
         0 0 40px #0088ff;
 }
 
-/* SUBTÍTULO */
+
 .subtitle {
     color: #7fd9ff;
     letter-spacing: 2px;
@@ -141,7 +140,7 @@ h1 {
     }
 }
 
-/* BOTONES */
+
 .link-btn {
     position: relative;
     display: block;
@@ -157,7 +156,6 @@ h1 {
     box-shadow: 0 0 15px #00aaff;
 }
 
-/* EFECTO LUZ DESLIZANTE */
 .link-btn::before {
     content: "";
     position: absolute;
@@ -178,9 +176,299 @@ h1 {
     box-shadow: 0 0 30px #00ccff;
 }
 
-/* FOOTER */
+
 footer {
     margin-top: 25px;
     font-size: 12px;
     opacity: 0.6;
+}
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BODY */
+body{
+    min-height:100vh;
+    font-family:'Poppins',sans-serif;
+    background:#07131f;
+    background:
+        linear-gradient(135deg,#07131f 0%,#0c1f33 50%,#061018 100%);
+    color:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+    padding:20px;
+}
+
+/* FONDO DECORATIVO */
+body::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(0,140,255,0.12);
+    border-radius:50%;
+    top:-200px;
+    right:-150px;
+    filter:blur(120px);
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:rgba(0,80,180,0.10);
+    border-radius:50%;
+    bottom:-180px;
+    left:-120px;
+    filter:blur(120px);
+}
+
+/* BURBUJAS */
+.bubbles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:0;
+}
+
+.bubbles span{
+    position:absolute;
+    bottom:-120px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.05);
+    border-radius:50%;
+    animation:float 18s linear infinite;
+}
+
+/* DIFERENTES TAMAÑOS */
+.bubbles span:nth-child(1){
+    width:60px;
+    height:60px;
+    left:10%;
+    animation-duration:16s;
+}
+
+.bubbles span:nth-child(2){
+    width:25px;
+    height:25px;
+    left:25%;
+    animation-duration:12s;
+}
+
+.bubbles span:nth-child(3){
+    width:40px;
+    height:40px;
+    left:45%;
+    animation-duration:18s;
+}
+
+.bubbles span:nth-child(4){
+    width:70px;
+    height:70px;
+    left:65%;
+    animation-duration:20s;
+}
+
+.bubbles span:nth-child(5){
+    width:30px;
+    height:30px;
+    left:85%;
+    animation-duration:14s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.2);
+        opacity:0;
+    }
+}
+
+/* CONTENEDOR */
+.container{
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    max-width:460px;
+
+    background:rgba(10,20,35,0.92);
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:24px;
+
+    padding:50px 35px;
+
+    text-align:center;
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.45),
+        0 0 40px rgba(0,140,255,0.12);
+
+    animation:show 0.8s ease;
+}
+
+/* ANIMACIÓN */
+@keyframes show{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* LOGO */
+.logo{
+    width:110px;
+    margin-bottom:25px;
+    transition:0.3s ease;
+}
+
+.logo:hover{
+    transform:scale(1.05);
+}
+
+/* TITULO */
+h1{
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:#ffffff;
+    letter-spacing:1px;
+}
+
+/* SUBTITULO */
+.subtitle{
+    color:#9bb3c9;
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:35px;
+}
+
+/* BOTONES */
+.link-btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+
+    text-decoration:none;
+
+    padding:16px 20px;
+    margin:14px 0;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d2238,
+            #123a63
+        );
+
+    border:1px solid rgba(0,140,255,0.25);
+
+    color:#ffffff;
+
+    font-size:16px;
+    font-weight:500;
+
+    transition:0.25s ease;
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* EFECTO HOVER */
+.link-btn:hover{
+    transform:translateY(-3px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #12304d,
+            #1b4f82
+        );
+
+    box-shadow:
+        0 10px 25px rgba(0,140,255,0.20);
+}
+
+/* BRILLO */
+.link-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.12),
+        transparent
+    );
+
+    transition:0.6s;
+}
+
+.link-btn:hover::before{
+    left:100%;
+}
+
+/* FOOTER */
+footer{
+    margin-top:25px;
+    color:rgba(255,255,255,0.45);
+    font-size:13px;
+}
+
+/* RESPONSIVE */
+@media(max-width:520px){
+
+    .container{
+        padding:40px 25px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+
+    .link-btn{
+        padding:15px;
+        font-size:15px;
+    }
 }
